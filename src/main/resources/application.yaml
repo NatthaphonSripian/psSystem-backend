@@ -1,0 +1,26 @@
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+
+spring:
+  main:
+    lazy-initialization: true
+
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:postgresql://35.240.136.80:5432/psSystem
+    username: postgres
+    password: syspass
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+#  security:
+#    user:
+#      name: admin
+#      password: 1234
+
