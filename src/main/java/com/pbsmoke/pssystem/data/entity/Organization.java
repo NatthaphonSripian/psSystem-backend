@@ -71,9 +71,6 @@ public class Organization {
     @OneToMany(mappedBy="organization")
     private List<OrganizationConfigFund> organizationConfigFunds;
 
-    @OneToMany(mappedBy="organization" , fetch = FetchType.LAZY)
-    private List<Department> departments;
-
     @OneToMany(mappedBy="organization", fetch = FetchType.LAZY)
     private List<EmployeeEmployment> employeeEmployments;
 }
