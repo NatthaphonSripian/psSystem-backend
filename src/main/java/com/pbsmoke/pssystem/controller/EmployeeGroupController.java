@@ -21,7 +21,7 @@ public class EmployeeGroupController {
         return new ResponseEntity<>(employeeGroupService.employeeGroupGetAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/{employeeLevelId}")
+    @GetMapping("/{employeeGroupId}")
     public ResponseEntity<EmployeeGroup> getBankById(@PathVariable("employeeGroupId") String employeeGroupId) {
         return new ResponseEntity<>(employeeGroupService.employeeGroupGetById(Long.parseLong(employeeGroupId)), HttpStatus.OK);
     }
