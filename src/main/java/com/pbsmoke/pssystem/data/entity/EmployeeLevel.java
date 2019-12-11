@@ -16,7 +16,7 @@ public class EmployeeLevel {
     @Id
     @GeneratedValue
     private long id;
-    private String employeeLevelCod;
+    private String employeeLevelCode;
     private String employeeLevelNameTh ;
     private String employeeLevelNameEn ;
     private String remark ;
