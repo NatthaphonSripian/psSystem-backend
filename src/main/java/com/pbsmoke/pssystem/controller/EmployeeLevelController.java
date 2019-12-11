@@ -22,8 +22,8 @@ public class EmployeeLevelController {
     }
 
     @GetMapping("/{employeeLevelId}")
-    public ResponseEntity<EmployeeLevel> getBankById(@PathVariable("employeeLevelId") long employeeLevelId) {
-        return new ResponseEntity<>(employeeLevelService.employeeLevelGetById(employeeLevelId), HttpStatus.OK);
+    public ResponseEntity<EmployeeLevel> getBankById(@PathVariable("employeeLevelId") String employeeLevelId) {
+        return new ResponseEntity<>(employeeLevelService.employeeLevelGetById(Long.parseLong(employeeLevelId)), HttpStatus.OK);
     }
 
     @PostMapping("/save")
