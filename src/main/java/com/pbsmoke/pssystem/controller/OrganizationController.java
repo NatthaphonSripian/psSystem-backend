@@ -32,7 +32,7 @@ public class OrganizationController {
         return new ResponseEntity<>(organizationService.organizationSave(organization), HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{organizationId}")
     public ResponseEntity<Void> deleteOrganization(@PathVariable("organizationId") long organizationId) {
         organizationService.organizationDelete(organizationId);
         return new ResponseEntity<>(HttpStatus.OK);
