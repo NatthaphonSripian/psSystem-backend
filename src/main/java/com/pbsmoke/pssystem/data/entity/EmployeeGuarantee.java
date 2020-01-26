@@ -15,7 +15,7 @@ public class EmployeeGuarantee {
 
     @Id
     @GeneratedValue
-    private String id;
+    private long id;
 
     public String guaranteeNo;
     public Date guaranteeDate;

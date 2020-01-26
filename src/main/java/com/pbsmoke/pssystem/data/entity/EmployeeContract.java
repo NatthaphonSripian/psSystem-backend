@@ -15,8 +15,7 @@ public class EmployeeContract {
 
     @Id
     @GeneratedValue
-    private String id;
-
+    private long id;
     private String contractNo;
     private Date contractDate;
     private Date contractStartDate;

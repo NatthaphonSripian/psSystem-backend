@@ -16,8 +16,7 @@ public class EmployeeEmployment {
 
     @Id
     @GeneratedValue
-    private String id;
-
+    private long id;
     public Date startDate;
     public Date endDate;
     public String EmployeeType;

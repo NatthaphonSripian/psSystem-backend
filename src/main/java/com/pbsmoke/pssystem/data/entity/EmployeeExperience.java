@@ -15,8 +15,7 @@ public class EmployeeExperience {
 
     @Id
     @GeneratedValue
-    private String id;
-
+    private long id;
     public int listNo ;
     public String organizationName ;
     public String businessType ;

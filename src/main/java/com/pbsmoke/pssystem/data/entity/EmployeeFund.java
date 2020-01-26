@@ -15,8 +15,7 @@ public class EmployeeFund {
 
     @Id
     @GeneratedValue
-    private String id;
-
+    private long id;
     public Date fundStartDate;
     public Date fundEndDate;
     public String accountMemberCode;

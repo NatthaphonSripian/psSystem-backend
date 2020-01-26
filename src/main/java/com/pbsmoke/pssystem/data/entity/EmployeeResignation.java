@@ -15,8 +15,7 @@ public class EmployeeResignation {
 
     @Id
     @GeneratedValue
-    private String id;
-
+    private long id;
     private String resignationNo;
     private Date resignationDate;
     private Date effectDate;
@@ -27,7 +26,6 @@ public class EmployeeResignation {
     private Date resignEffectDate;
     private String isCalculateSalary;
     private String isCalculateLastOccasionalIncomeDeduct;
-
     private String createdBy;
     @CreatedDate
     @Column(nullable = false, updatable = false)

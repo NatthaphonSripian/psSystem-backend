@@ -16,7 +16,6 @@ public class EmployeeSocial {
     @Id
     @GeneratedValue
     private long id;
-
     private String isSocialReduce ;
     private String socialNo ;
     private Date registerDate ;

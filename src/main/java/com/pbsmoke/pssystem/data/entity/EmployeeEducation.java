@@ -14,9 +14,9 @@ import java.util.Date;
 @Entity
 public class EmployeeEducation {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue
-    private String id;
+    private long id;
 
     private String education;
     private String institution;

@@ -15,7 +15,7 @@ public class EmployeePromote {
 
     @Id
     @GeneratedValue
-    private String id;
+    private long id;
     private String promoteNo ;
     private Date promoteDate ;
     private Date effectDate ;

@@ -15,14 +15,13 @@ public class EmployeeEmploymentDetail {
 
     @Id
     @GeneratedValue
-    private String id;
+    private long id;
     public int listNo;
     public double incomeDeductAmount;
     public String incomeDeductType;
     public String paymentType;
     public Date startDate;
     public Date endDate;
-
     private String createdBy;
     @CreatedDate
     @Column(nullable = false, updatable = false)

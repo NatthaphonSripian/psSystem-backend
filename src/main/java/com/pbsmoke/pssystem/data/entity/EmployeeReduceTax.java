@@ -16,7 +16,6 @@ public class EmployeeReduceTax {
     @Id
     @GeneratedValue
     private long id;
-
     private String spouseDivide ;
     private String spouseReduce ;
     private int child ;
@@ -39,7 +38,6 @@ public class EmployeeReduceTax {
     private double motherHealthInsurance ;
     private double longInsurance ;
     private Boolean isTwoBenefits ;
-
     private String createdBy ;
     @CreatedDate
     @Column(nullable = false, updatable = false)
