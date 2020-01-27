@@ -42,6 +42,15 @@ public class Employee {
     @OneToMany(mappedBy = "employee")
     private List<Address> addresses;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "employee_group_id", nullable = false)
+    private EmployeeGroup employeeGroup;
+
+
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "employee_level_id", nullable = false)
+    private EmployeeLevel employeeLevel;
+
     @OneToMany(mappedBy="employee")
     private List<EmployeeEducation> employeeEducations;
 

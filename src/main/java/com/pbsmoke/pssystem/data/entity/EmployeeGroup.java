@@ -29,4 +29,7 @@ public class EmployeeGroup {
     @Column(nullable = false)
     private Date editDate ;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "employeeGroup")
+    private Employee employee;
+
 }
