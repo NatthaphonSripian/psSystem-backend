@@ -29,7 +29,7 @@ public class EmployeeLevel {
     @Column(nullable = false)
     private Date editDate ;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "employeeLevel")
-    private Employee employee;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "employeeLevel")
+//    private Employee employee;
 
 }

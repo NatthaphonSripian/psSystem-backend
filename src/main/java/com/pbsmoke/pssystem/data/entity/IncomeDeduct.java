@@ -1,6 +1,8 @@
 package com.pbsmoke.pssystem.data.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -38,6 +40,6 @@ public class IncomeDeduct {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "incomeDeduct")
     private EmployeeEmploymentDetail employeeEmploymentDetail;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "incomeDeduct")
+    @OneToOne(mappedBy = "incomeDeduct", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private EmployeeSocial employeeSocial;
 }

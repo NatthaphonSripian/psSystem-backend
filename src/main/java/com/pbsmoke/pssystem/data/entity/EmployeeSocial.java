@@ -48,8 +48,8 @@ public class EmployeeSocial {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "income_deduct_id", nullable = false)
+    @OneToOne(targetEntity = Employee.class)
+    @JoinColumn(name = "income_deduct_id")
     private IncomeDeduct incomeDeduct;
 }
 
