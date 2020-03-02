@@ -25,8 +25,8 @@ public class EmployeeService {
         return employeeDtoList;
     }
 
-    public Employee employeeGetById(long employeeGroupId) {
-        return employeeRepository.findById(employeeGroupId).orElse(null);
+    public EmployeeDto employeeGetById(long employeeGroupId) {
+        return employeeMapper.maperAddressToDto(employeeRepository.findById(employeeGroupId).orElse(null));
     }
 
     public EmployeeDto employeeSave(Employee employee) {
