@@ -1,15 +1,9 @@
 package com.pbsmoke.pssystem.service.mapper;
 
 import com.pbsmoke.pssystem.data.entity.Employee;
-import com.pbsmoke.pssystem.data.entity.EmployeeGroup;
 import com.pbsmoke.pssystem.data.entity.dto.EmployeeDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.stereotype.Component;
-
-import javax.persistence.Column;
-import java.util.Date;
 
 @Component
 public class EmployeeMapper {
@@ -22,6 +16,12 @@ public class EmployeeMapper {
 
     @Autowired
     private EmployeeLevelMapper employeeLevelMapper;
+
+    @Autowired
+    private EmployeeSocialMapper employeeSocialMapper;
+
+    @Autowired
+    private EmployeeReduceTaxMapper employeeReduceTaxMapper;
 
 
     public EmployeeDto maperAddressToDto(Employee employee) {
@@ -53,6 +53,13 @@ public class EmployeeMapper {
             dto.setAddresses(addressMapper.maperAddressToDto(employee.getAddresses()));
         }
 
+        if (employee.getEmployeeSocial() != null) {
+            dto.setEmployeeSocial(employeeSocialMapper.mapperEmployeeSocialDto(employee.getEmployeeSocial()));
+        }
+
+        if (employee.getEmployeeReduceTax() != null) {
+            dto.setEmployeeReduceTax(employeeReduceTaxMapper.mapperEmployeeReduceTaxDto(employee.getEmployeeReduceTax()));
+        }
 
         return dto;
     }
