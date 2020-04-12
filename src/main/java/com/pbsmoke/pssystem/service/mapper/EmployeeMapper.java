@@ -24,7 +24,7 @@ public class EmployeeMapper {
     private EmployeeReduceTaxMapper employeeReduceTaxMapper;
 
 
-    public EmployeeDto maperAddressToDto(Employee employee) {
+    public EmployeeDto mapEmployeeDto(Employee employee) {
         EmployeeDto dto = new EmployeeDto();
         dto.setId(employee.getId());
         dto.setEmployeeCode(employee.getEmployeeCode());

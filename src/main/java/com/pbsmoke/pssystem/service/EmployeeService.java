@@ -1,5 +1,6 @@
 package com.pbsmoke.pssystem.service;
 
+import com.pbsmoke.pssystem.data.entity.Address;
 import com.pbsmoke.pssystem.data.entity.Employee;
 import com.pbsmoke.pssystem.data.entity.dto.EmployeeDto;
 import com.pbsmoke.pssystem.data.repositories.EmployeeRepository;
@@ -21,16 +22,16 @@ public class EmployeeService {
 
     public List<EmployeeDto> employeeGetAll() {
         List<EmployeeDto> employeeDtoList = new ArrayList<>();
-        employeeRepository.findAll().forEach(emp -> employeeDtoList.add(employeeMapper.maperAddressToDto(emp)));
+        employeeRepository.findAll().forEach(emp -> employeeDtoList.add(employeeMapper.mapEmployeeDto(emp)));
         return employeeDtoList;
     }
 
     public EmployeeDto employeeGetById(long employeeGroupId) {
-        return employeeMapper.maperAddressToDto(employeeRepository.findById(employeeGroupId).orElse(null));
+        return employeeMapper.mapEmployeeDto(employeeRepository.findById(employeeGroupId).orElse(null));
     }
 
     public EmployeeDto employeeSave(Employee employee) {
-        return employeeMapper.maperAddressToDto(employeeRepository.save(validateEmployee(employee)));
+        return employeeMapper.mapEmployeeDto(employeeRepository.save(validateEmployee(employee)));
     }
 
     public void employeeDelete(long employeeId) {
@@ -38,9 +39,11 @@ public class EmployeeService {
     }
 
     private Employee validateEmployee(Employee employee) {
+
         if (employee.getAddresses() != null && employee.getAddresses().getEmployee() == null) {
-            employee.getAddresses().setEmployee(employee);
+        employee.getAddresses().setEmployee(employee);
         }
+
 
         if (employee.getEmployeeReduceTax() != null && employee.getEmployeeReduceTax().getEmployee() == null) {
             employee.getEmployeeReduceTax().setEmployee(employee);

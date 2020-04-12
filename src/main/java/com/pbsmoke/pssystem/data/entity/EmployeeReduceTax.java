@@ -1,6 +1,7 @@
 package com.pbsmoke.pssystem.data.entity;
 
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -49,5 +50,6 @@ public class EmployeeReduceTax {
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "employee_id", nullable = false)
+    @ToString.Exclude
     private Employee employee;
 }

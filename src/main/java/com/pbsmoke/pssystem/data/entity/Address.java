@@ -1,6 +1,7 @@
 package com.pbsmoke.pssystem.data.entity;
 
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.mapping.ToOne;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -52,5 +53,6 @@ public class Address {
 
     @OneToOne(targetEntity = Employee.class)
     @JoinColumn(name="employee_id", nullable=false)
+    @ToString.Exclude
     private Employee employee;
 }
